@@ -28,6 +28,37 @@ public class verifyInteger  extends JFrame
         add(cancelButton);
         add(resultLabel);
 
+        // add action listener to verify button
+        verifyButton.addActionListener(new ActionListener() 
+        {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // try to parse input as integer
+                    int num = Integer.parseInt(textField.getText());
+
+                    // display success message
+                    resultLabel.setText(num + " is an integer!");
+                } catch (NumberFormatException ex) {
+                    // display error message
+                    resultLabel.setText(textField.getText() + " is not an integer.");
+                }
+            }
+        });
+
+        // add action listener to cancel button
+        cancelButton.addActionListener(new ActionListener() 
+        {
+            public void actionPerformed(ActionEvent e) {
+                // close the window
+                dispose();
+            }
+        });
+
+        // set window size and make it visible
+        setSize(300, 300);
+        setVisible(true);
+
+
     }
 
 
