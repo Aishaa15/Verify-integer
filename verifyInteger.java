@@ -60,9 +60,5 @@ public class verifyInteger  extends JFrame
 
 
     }
-
-
-
-
     
 }
